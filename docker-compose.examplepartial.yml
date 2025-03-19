@@ -1,0 +1,14 @@
+services:
+  words-api:
+    environment:
+      WAITRESS_THREADS : 6
+    ports:
+      "8892:5000"
+    volumes:
+      - ./data:/usr/src/app/data
+      - ./wsgi.py:/usr/src/app/wsgi.py
+      # CREATE IT FIRST ON HOST
+      - ./host.out:/usr/src/app/flask.out
+    networks:
+      customnet:
+        ipv4_address: 10.0.0.10
