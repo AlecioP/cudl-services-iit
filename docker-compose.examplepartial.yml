@@ -2,6 +2,7 @@ services:
   words-api:
     environment:
       WAITRESS_THREADS : 6
+      ROOT_URL : http://localhost:8888
     ports:
       "8892:5000"
     volumes:
